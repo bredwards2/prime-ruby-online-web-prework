@@ -20,20 +20,12 @@ describe "prime?" do
   end
 end
 
- def prime? n
-  for d in 2..(n - 1)
-   if (n % d) == 0
+ def prime?(number)
+  if number >= 2
+    (2..number - 1).all? do |x|
+      number % x != 0
+    end
+  else
     return false
-   end
   end
-
-  true
- end
-
- def is_prime2 n
-  foundDivider = false
-   for d in 2..(n - 1)
-    foundDivider = ((n % d) == 0) or foundDivider
-   end
-  not foundDivider
- end
+end
